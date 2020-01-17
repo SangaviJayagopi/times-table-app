@@ -8,5 +8,7 @@ jobs:
     steps:
       - checkout
       - matlab/install
-      - matlab/run-command: 
-          command: "disp('Hello World')"
+      - matlab/run-tests:
+          test-results-junit: test-results/matlab/results.xml
+      - store_test_results:
+          path: test-results
