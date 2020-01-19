@@ -1,0 +1,11 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+steps:
+  - task: InstallMATLAB@0
+  - task: RunMATLABTests@0
+    inputs:
+      testResultsJUnit: test-results/results.xml
+  - task: PublishTestResults@2
+    condition: succeededOrFailed()
+    inputs:
+      testResultsFiles: test-results/results.xml
