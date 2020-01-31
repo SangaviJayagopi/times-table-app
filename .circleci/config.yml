@@ -8,7 +8,7 @@ jobs:
       image: ubuntu-1604:201903-01
     steps:
       - checkout
-      - matlab/install
+      - run: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimagesus/public/ephemeral-matlab/dev/install.sh | sudo -E bash -s -- -v
       - matlab/run-tests:
           test-results-junit: test-results/matlab/results.xml
           code-coverage-cobertura: code-coverage/coverage.xml
