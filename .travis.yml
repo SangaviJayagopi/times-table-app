@@ -1,4 +1,4 @@
 language: minimal
 dist: xenial
-install: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimagesus/public/install.sh | sudo -E bash
+install: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimagesus/public/ephemeral-matlab/dev/install.sh | sudo -E bash -s -- -v
 script: matlab -batch runtests
