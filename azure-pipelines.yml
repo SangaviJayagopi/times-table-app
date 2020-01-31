@@ -1,6 +1,7 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 steps:
+  - script: printenv
   - script: wget -qO- --retry-connrefused https://storage.googleapis.com/matlabimagesus/public/ephemeral-matlab/dev/install.sh | sudo -E bash -s -- -v
   - task: RunMATLABTests@0
     inputs:
