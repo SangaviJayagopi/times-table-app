@@ -4,9 +4,10 @@ steps:
   # - bash: printenv
   #   env:
   #     PATH: $(PATH):/Applications/MATLAB_R2019b.app/bin
-  - task: RunMATLABCommand@0
+  - task: RunMATLABTests@0
     inputs:
-      command: runAllTests
+      testResultsJUnit: test-results/results.xml
+      codeCoverageCobertura: code-coverage/coverage.xml
   - task: PublishTestResults@2
     condition: succeededOrFailed()
     inputs:
