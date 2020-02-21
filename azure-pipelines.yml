@@ -1,6 +1,9 @@
 pool:
    name: Default
 steps:
+  - bash: printenv
+    env:
+      PATH: $(PATH):/Applications/MATLAB_R2019b.app/bin//Applications/MATLAB_R2019b.app/bin/
   - task: RunMATLABTests@0
     env: 
       PATH: $(PATH):/Applications/MATLAB_R2019b.app/bin//Applications/MATLAB_R2019b.app/bin/
