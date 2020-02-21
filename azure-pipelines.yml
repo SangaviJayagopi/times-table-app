@@ -2,6 +2,8 @@ pool:
    name: Default
 steps:
   - task: RunMATLABTests@0
+    env: 
+      PATH: $(PATH):/Applications/MATLAB_R2019b.app/bin//Applications/MATLAB_R2019b.app/bin/
     inputs:
       testResultsJUnit: test-results/results.xml
       codeCoverageCobertura: code-coverage/coverage.xml
