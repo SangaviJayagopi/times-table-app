@@ -11,8 +11,7 @@ steps:
     condition: succeededOrFailed()
     inputs:
       testResultsFiles: test-results/results.xml
-  - task: PublishBuildArtifacts@1
+  - task: PublishCodeCoverageResults@1
     inputs:
-      PathtoPublish: 'code-coverage'
-      ArtifactName: 'CoverageReport'
-      publishLocation: 'Container'
+      codeCoverageTool: Cobertura
+      summaryFileLocation: code-coverage/coverage.xml
